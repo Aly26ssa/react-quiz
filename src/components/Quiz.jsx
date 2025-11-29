@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect} from 'react'
+import { useState, useRef, useEffect} from 'react'
 import './Quiz.css'
-import { questions } from '../assets/data'
+import { questions } from '../data/data'
 
 const Quiz = () => {
 
