@@ -1,28 +1,32 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect} from 'react'
 import './Quiz.css'
 import { questions } from '../assets/data'
 
 const Quiz = () => {
 
-    let [index, setIndex] = useState(0);
-    let [question, setQuestion] = useState(questions[index]);
-    let [lock, setLock] = useState(false);
-    let [score, setScore] = useState(0);
-    let [result, setResult] = useState(false);
+    const [index, setIndex] = useState(0);
+    const [question, setQuestion] = useState(questions[0]);
+    const [lock, setLock] = useState(false);
+    const [score, setScore] = useState(0);
+    const [result, setResult] = useState(false);
 
-    let answer1 = useRef(null);
-    let answer2 = useRef(null);
-    let answer3 = useRef(null);
-    let answer4 = useRef(null);
+    const answer1 = useRef(null);
+    const answer2 = useRef(null);
+    const answer3 = useRef(null);
+    const answer4 = useRef(null);
 
-    let option_array = [answer1, answer2, answer3, answer4];
+    const option_array = [answer1, answer2, answer3, answer4];
+
+    useEffect(() => {
+        setQuestion(questions[index]);
+    }, [index]);
 
     const checkAnswer = (e, correctAnswer) => {
         if (lock === false) {
             if (question.correctAnswer === correctAnswer) {
                 e.target.classList.add("correct");
                 setLock(true);
-                setScore(previous => previous+1);
+                setScore(previous => previous + 1);
             } else {
                 e.target.classList.add("incorrect");
                 setLock(true);
@@ -35,15 +39,14 @@ const Quiz = () => {
         if (lock === true) {
             if (index === questions.length -1) {
                 setResult(true);
-                return 0;
+                return;
             }
-            setIndex(++index);
-            setQuestion(questions[index]);
+
+            setIndex(previous => previous + 1);
             setLock(false);
-            option_array.map((option) => {
+            option_array.forEach((option) => {
                 option.current.classList.remove("incorrect");
                 option.current.classList.remove("correct");
-                return null;
             })
         }
     }
