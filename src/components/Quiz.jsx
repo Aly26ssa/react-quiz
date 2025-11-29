@@ -26,7 +26,7 @@ const Quiz = () => {
             if (question.correctAnswer === correctAnswer) {
                 e.target.classList.add("correct");
                 setLock(true);
-                setScore(previous => previous + 1);
+                setScore(prev => prev + 1);
             } else {
                 e.target.classList.add("incorrect");
                 setLock(true);
@@ -37,12 +37,11 @@ const Quiz = () => {
 
     const next = () => {
         if (lock === true) {
-            if (index === questions.length -1) {
+            if (index === questions.length - 1) {
                 setResult(true);
                 return;
             }
-
-            setIndex(previous => previous + 1);
+            setIndex(prev => prev + 1);
             setLock(false);
             option_array.forEach((option) => {
                 option.current.classList.remove("incorrect");

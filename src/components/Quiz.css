@@ -4,7 +4,7 @@
     margin: 50px auto;
     border-radius: 15px;
     text-align: center;
-    width: 50%;
+    width: 55%;
 }
 
 .quiz__title {
@@ -16,7 +16,7 @@
 
 .question {
     font-weight: lighter;
-    font-size: 2.1rem;
+    font-size: 2.5rem;
     padding: 25px;
     color: #1f1137;
     font-family: var(--primary-font);
@@ -24,7 +24,7 @@
 
 .btn {
     font-family: var(--secondary-font);
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -51,7 +51,7 @@
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     display: inline-block;
     margin-top: 10px;
     margin-left: auto;
@@ -64,17 +64,19 @@
 
 .index {
     font-family: var(--secondary-font);
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     padding-top: 15px;
     font-weight: bold;
 }
 
 .quiz .correct {
     background-color: green;
+    border-color: green;
 }
 
 .quiz .incorrect {
     background-color: red;
+    border-color: red;
 }
 
 .score {
