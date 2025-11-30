@@ -1,11 +1,14 @@
 {
   "name": "react-quiz",
+  "homepage": "https://Aly26ssa.github.io/react-quiz",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -21,7 +24,9 @@
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "gh": "^2.8.9",
     "globals": "^16.5.0",
+    "pages": "^0.0.16",
     "vite": "^7.2.4"
   }
 }
